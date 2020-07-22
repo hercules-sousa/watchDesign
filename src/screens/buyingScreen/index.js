@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 
-export default function App() {
+const BuyingScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -13,7 +13,7 @@ export default function App() {
 
       <ScrollView contentContainerStyle={styles.body}>
         <View style={styles.box}>
-          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage} />
           <Text style={styles.watchName}>DATEJUST 36</Text>
           <Text style={styles.watchType}>Classic</Text>
           <Text style={styles.watchPrice}>R$ 51.850</Text>
@@ -86,3 +86,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   }
 });
+
+
+export default BuyingScreen
