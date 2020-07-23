@@ -18,16 +18,48 @@ export default function App() {
           <Text style={styles.watchType}>Classic</Text>
           <Text style={styles.watchPrice}>R$ 51.850</Text>
         </View>
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('./watches/datejust36.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 36</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 51.850</Text>
+        </View>
       </ScrollView>
     </View>
   );
@@ -43,12 +75,10 @@ const styles = StyleSheet.create({
     width: 136,
     height: 174,
     backgroundColor: '#f5f5f5',
-    marginBottom: 32,
+    marginTop: 32,
     alignItems: 'center',
     justifyContent: 'flex-end',
     borderRadius: 24,
-    borderColor: '#806261',
-    borderWidth: 2,
   },
 
   header: {
@@ -59,17 +89,16 @@ const styles = StyleSheet.create({
   },
 
   body: {
-    marginTop: 32,
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
 
   watchImage: {
-    width: 100,
-    height: 100,
     position: 'absolute',
-    top: 5
+    top: -40,
+    width: 128,
+    height: 128,
   },
 
   watchName: {
@@ -83,6 +112,6 @@ const styles = StyleSheet.create({
 
   watchPrice: {
     color: '#806261',
-    marginBottom: 8,
+    marginBottom: 24,
   }
 });
