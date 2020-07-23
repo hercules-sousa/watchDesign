@@ -6,9 +6,9 @@ const BuyingScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <MaterialIcons name="filter-list" size={32} color="black"/>
-        <Ionicons name="ios-infinite" size={32} color="black" />
-        <AntDesign name="search1" size={32} color="black" />
+        <MaterialIcons style={styles.icons} name="filter-list" size={32} color="black"/>
+        <Ionicons style={styles.icons} name="ios-infinite" size={32} color="black" />
+        <AntDesign style={styles.icons} name="search1" size={32} color="black" />
       </View>
 
       <ScrollView contentContainerStyle={styles.body}>
@@ -18,16 +18,48 @@ const BuyingScreen = () => {
           <Text style={styles.watchType}>Classic</Text>
           <Text style={styles.watchPrice}>R$ 51.850</Text>
         </View>
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
+        <View style={styles.box}>
+          <Image source={require('../../../watches/datejust41.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DATEJUST 41</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 80.150</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/datejust31.png')} style={styles.watchImage, { width: 144, height: 144 }} />
+          <Text style={styles.watchName}>DATEJUST 31</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 72.300</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/datejust34.png')} style={styles.watchImage, { width: 144, height: 144 }} />
+          <Text style={styles.watchName}>DATEJUST 34</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 57.850</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/dayDate40.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>DAY DATE 40</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 55.890</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/submarinerDate.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>SUBMARINER</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 85.450</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/explorerII.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>EXPLORER II</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 50.750</Text>
+        </View>
+        <View style={styles.box}>
+          <Image source={require('../../../watches/explorer.png')} style={styles.watchImage} />
+          <Text style={styles.watchName}>EXPLORER</Text>
+          <Text style={styles.watchType}>Classic</Text>
+          <Text style={styles.watchPrice}>R$ 39.850</Text>
+        </View>
       </ScrollView>
     </View>
   );
@@ -43,33 +75,30 @@ const styles = StyleSheet.create({
     width: 136,
     height: 174,
     backgroundColor: '#f5f5f5',
-    marginBottom: 32,
+    marginTop: 32,
     alignItems: 'center',
     justifyContent: 'flex-end',
     borderRadius: 24,
-    borderColor: '#806261',
-    borderWidth: 2,
   },
 
   header: {
-    paddingTop: 32,
+    paddingTop: 40,
     paddingHorizontal: 24,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
 
   body: {
-    marginTop: 32,
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
 
   watchImage: {
-    width: 100,
-    height: 100,
     position: 'absolute',
-    top: 5
+    top: -40,
+    width: 128,
+    height: 128,
   },
 
   watchName: {
@@ -83,7 +112,11 @@ const styles = StyleSheet.create({
 
   watchPrice: {
     color: '#806261',
-    marginBottom: 8,
+    marginBottom: 24,
+  },
+
+  icons: {
+    bottom: 8
   }
 });
 
