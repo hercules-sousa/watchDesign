@@ -1,8 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 
 const BuyingScreen = () => {
+
+  function test() {
+    console.log('asdfasdf')
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -12,54 +17,78 @@ const BuyingScreen = () => {
       </View>
 
       <ScrollView contentContainerStyle={styles.body}>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>DATEJUST 36</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 51.850</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/datejust41.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>DATEJUST 41</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 80.150</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/datejust31.png')} style={styles.watchImage, { width: 144, height: 144 }} />
-          <Text style={styles.watchName}>DATEJUST 31</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 72.300</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/datejust34.png')} style={styles.watchImage, { width: 144, height: 144 }} />
-          <Text style={styles.watchName}>DATEJUST 34</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 57.850</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/dayDate40.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>DAY DATE 40</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 55.890</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/submarinerDate.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>SUBMARINER</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 85.450</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/explorerII.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>EXPLORER II</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 50.750</Text>
-        </View>
-        <View style={styles.box}>
-          <Image source={require('../../../watches/explorer.png')} style={styles.watchImage} />
-          <Text style={styles.watchName}>EXPLORER</Text>
-          <Text style={styles.watchType}>Classic</Text>
-          <Text style={styles.watchPrice}>R$ 39.850</Text>
-        </View>
+        <TouchableOpacity onPress={test}>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>DATEJUST 36</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 51.850</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/datejust41.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>DATEJUST 41</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 80.150</Text>
+          </View>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/datejust31.png')} style={styles.watchImage, { width: 144, height: 144 }} />
+            <Text style={styles.watchName}>DATEJUST 31</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 72.300</Text>
+          </View>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/datejust34.png')} style={styles.watchImage, { width: 144, height: 144 }} />
+            <Text style={styles.watchName}>DATEJUST 34</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 57.850</Text>
+          </View>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/dayDate40.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>DAY DATE 40</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 55.890</Text>
+          </View>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/submarinerDate.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>SUBMARINER</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 85.450</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/explorerII.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>EXPLORER II</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 50.750</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.box}>
+            <Image source={require('../../../watches/explorer.png')} style={styles.watchImage} />
+            <Text style={styles.watchName}>EXPLORER</Text>
+            <Text style={styles.watchType}>Classic</Text>
+            <Text style={styles.watchPrice}>R$ 39.850</Text>
+          </View>
+        </TouchableOpacity>
+        
       </ScrollView>
     </View>
   );
