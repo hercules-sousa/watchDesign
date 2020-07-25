@@ -4,10 +4,6 @@ import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 
 const BuyingScreen = () => {
 
-  function test() {
-    console.log('asdfasdf')
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
