@@ -1,8 +1,28 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
+import watches from '../../database/watchInfo'
 
 const BuyingScreen = () => {
+
+  let arrWatches = []
+
+  function createArray(){
+    Object.keys(watches).forEach((model) => {
+      let arr = []
+      arr.push(model)
+      arr.push(watches[model])
+      arrWatches.push(arr)
+      // console.log(arrWatches)
+    })
+  }
+
+  function concatWatchName(separatedName){
+    arrSeparatedName = separatedName.split(' ')
+    concated = arrSeparatedName[0].concat(arrSeparatedName[1])
+    return concated
+  }
+  
 
   return (
     <View style={styles.container}>
@@ -13,6 +33,9 @@ const BuyingScreen = () => {
       </View>
 
       <ScrollView contentContainerStyle={styles.body}>
+        {createArray()}
+
+
         <TouchableOpacity onPress={test}>
           <View style={styles.box}>
             <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage} />
