@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
-import watches from '../../database/watchInfo'
+import watches from '../../database'
 
 const BuyingScreen = () => {
 
@@ -13,7 +13,6 @@ const BuyingScreen = () => {
       arr.push(model)
       arr.push(watches[model])
       arrWatches.push(arr)
-      // console.log(arrWatches)
     })
   }
 
@@ -36,7 +35,7 @@ const BuyingScreen = () => {
         {createArray()}
 
 
-        <TouchableOpacity onPress={test}>
+        <TouchableOpacity>
           <View style={styles.box}>
             <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage} />
             <Text style={styles.watchName}>DATEJUST 36</Text>
@@ -83,7 +82,7 @@ const BuyingScreen = () => {
         
         <TouchableOpacity>
           <View style={styles.box}>
-            <Image source={require('../../../watches/submarinerDate.png')} style={styles.watchImage} />
+            <Image source={require('../../../watches/submariner.png')} style={styles.watchImage} />
             <Text style={styles.watchName}>SUBMARINER</Text>
             <Text style={styles.watchType}>Classic</Text>
             <Text style={styles.watchPrice}>R$ 85.450</Text>
