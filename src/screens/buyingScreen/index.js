@@ -1,76 +1,62 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
-import watches from '../../database'
 
-const BuyingScreen = () => {
-
-  let arrWatches = []
-
-  function createArray(){
-    Object.keys(watches).forEach((model) => {
-      let arr = []
-      arr.push(model)
-      arr.push(watches[model])
-      arrWatches.push(arr)
-    })
-  }
-
-  function concatWatchName(separatedName){
-    let concated = String()
-    let arrSeparatedName = separatedName.split(' ').map(word => {
-      concated += word
-    })
-    return concated
-  }
-  
-
+const BuyingScreen = ({ route, navigation }) => {
+  let { model, uri, price, composition } = route.params
   return (
     <View style={styles.container}>
+
       <View style={styles.header}>
         <MaterialIcons style={styles.icons} name="filter-list" size={32} color="black"/>
         <Ionicons style={styles.icons} name="ios-infinite" size={32} color="black" />
         <AntDesign style={styles.icons} name="search1" size={32} color="black" />
       </View>
 
-      <ScrollView contentContainerStyle={styles.body}>
-        {createArray()}
-        {arrWatches.map((watchArray) => {
-          let model = watchArray[0]
-          let data = watchArray[1]
-          return (
-
-            <TouchableOpacity key={model}>
-              <View style={styles.box}>
-                <Image source={{ uri: data.uri }} style={styles.watchImage}/>
-                <Text style={styles.watchName}>{model.toUpperCase()}</Text>
-                <Text style={styles.watchType}>Classic</Text>
-                <Text style={styles.watchPrice}>{data.price}</Text>
-              </View>
-            </TouchableOpacity>
-            
-          )
-        })}
-        
-      </ScrollView>
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        <Image source={{ uri: uri }} style={styles.imageConfig} />
+        <Text>Model: {model[0].toUpperCase() + model.slice(1)}</Text>
+        <Text>Price: {price}</Text>
+        <Text>Compostion:</Text>
+        <Text>{composition}</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.addCartButton}>
+          <Text style={styles.textAddCartButton}>Add to cart</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fffff9'
+    backgroundColor: '#fffff9',
+  },
+  addCartButton: {
+    backgroundColor: '#aa7e6f',
+    width: 160,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 16,
+    padding: 24,
   },
 
-  box: {
-    width: 136,
-    height: 174,
-    backgroundColor: '#f5f5f5',
-    marginTop: 32,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    borderRadius: 24,
+  textAddCartButton: {
+    color: '#fffaf7'
+  },
+  
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 24,
+    width: '100%',
+    alignItems: 'center'
+  },
+  imageConfig: {
+    width: '50%',
+    height: '50%',
   },
 
   header: {
@@ -79,38 +65,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-
-  body: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-
-  watchImage: {
-    position: 'absolute',
-    top: -40,
-    width: 128,
-    height: 128,
-  },
-
-  watchName: {
-    fontSize: 16
-  },
-
-  watchType: {
-    fontSize: 14,
-    color: '#d1d1d1'
-  },
-
-  watchPrice: {
-    color: '#806261',
-    marginBottom: 24,
-  },
-
-  icons: {
-    bottom: 8
-  }
-});
-
+})
 
 export default BuyingScreen
