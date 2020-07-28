@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 import watches from '../../database'
 
@@ -42,8 +42,8 @@ const BuyingScreen = () => {
 
             <TouchableOpacity key={model}>
               <View style={styles.box}>
-                <Image source={require('../../../watches/datejust36.png')} style={styles.watchImage}/>
-                <Text style={styles.watchName}>{concatWatchName(model).toUpperCase()}</Text>
+                <Image source={{ uri: data.uri }} style={styles.watchImage}/>
+                <Text style={styles.watchName}>{model.toUpperCase()}</Text>
                 <Text style={styles.watchType}>Classic</Text>
                 <Text style={styles.watchPrice}>{data.price}</Text>
               </View>
