@@ -1,4 +1,4 @@
-var watches = {
+const watches = {
   'datejust 36': {
     'composition': 'Oyster, 36 mm, aço Oystersteel e ouro branco',
     'price': 'R$ 51.850',
