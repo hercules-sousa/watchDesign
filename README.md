@@ -5,16 +5,12 @@
 
 ------------------------------------------------------------------------------------------------------------------
 
-<img src="./.github/printSellingScreen.jpeg" height=500 /> <img src="./.github/addToCartScreen.jpeg" height=500 />
-
 <table style="width:100%">
   <tr>
    <td align="center"><img src="./.github/printSellingScreen.jpeg" height="auto" width="160">
    <h5>Sample screen</h3>
 
-   <td align="center"><a href="https://github.com/jhonatan2104/"><img src="./.github/addToCartScreen.jpeg" height="auto" width="160"></a>
-   <h5>AddToCart screen</h3>
-   <td align="center"><a href="https://github.com/jhonatan2104/"><img src="./.github/addToCartScreen.jpeg" height="auto" width="160"></a>
+   <td align="center"><img src="./.github/addToCartScreen.jpeg" height="auto" width="160">
    <h5>AddToCart screen</h3>
   </tr>
 </table>
