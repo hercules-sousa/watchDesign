@@ -38,8 +38,14 @@ const BuyingScreen = ({ route, navigation }) => {
             color="white" 
           />
         </TouchableOpacity>
-
       </View>
+
+      <View style={{ alignItems: 'center', padding: 16 }}>
+        <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center',  width: '90%', height: 56 }}>
+          <Text style={{ color: '#a9a9a9', fontSize: 16 }}>About</Text>
+        </TouchableOpacity>
+      </View>
+
     </View>
   )
 }
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
   },
   addCartButton: {
     backgroundColor: '#aa7e6f',
-    width: 160,
+    width: 200,
     height: 32,
     alignItems: 'center',
     justifyContent: 'center',
@@ -65,8 +71,6 @@ const styles = StyleSheet.create({
   },
   
   buttonContainer: {
-    position: 'absolute',
-    bottom: 24,
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row',

@@ -64,7 +64,7 @@ const SampleScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fffff9'
+    backgroundColor: '#fffff9',
   },
 
   box: {
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     borderRadius: 24,
   },
+
 
   body: {
     flexWrap: 'wrap',
