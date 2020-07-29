@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
-import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
+import Header from '../../components/header'
 import watches from '../../database'
 
 const SampleScreen = ({ navigation }) => {
@@ -30,11 +30,7 @@ const SampleScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <MaterialIcons style={styles.icons} name="filter-list" size={32} color="black"/>
-        <Ionicons style={styles.icons} name="ios-infinite" size={32} color="black" />
-        <AntDesign style={styles.icons} name="search1" size={32} color="black" />
-      </View>
+      <Header />
 
       <ScrollView contentContainerStyle={styles.body}>
         {createArray()}
@@ -81,13 +77,6 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
 
-  header: {
-    paddingTop: 40,
-    paddingHorizontal: 24,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-
   body: {
     flexWrap: 'wrap',
     flexDirection: 'row',
@@ -114,10 +103,6 @@ const styles = StyleSheet.create({
     color: '#806261',
     marginBottom: 24,
   },
-
-  icons: {
-    bottom: 8
-  }
 });
 
 
