@@ -1,7 +1,9 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import Header from '../../components/header'
 import { Feather, AntDesign } from '@expo/vector-icons';
+
+import styles from './styles'
 
 const BuyingScreen = ({ route, navigation }) => {
   let { model, uri, price, composition } = route.params
@@ -20,7 +22,7 @@ const BuyingScreen = ({ route, navigation }) => {
         <Text>{composition}</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={{ backgroundColor: '#aa7e6f', padding: 16, borderRadius: 36 }}>
+        <TouchableOpacity style={styles.icons} onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" 
             size={24} 
             color="white" 
@@ -31,7 +33,7 @@ const BuyingScreen = ({ route, navigation }) => {
           <Text style={styles.textAddCartButton}>Add to cart</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ backgroundColor: '#aa7e6f', padding: 16, borderRadius: 36 }}>
+        <TouchableOpacity style={styles.icons}>
           <Feather 
             name="save" 
             size={24} 
@@ -49,56 +51,5 @@ const BuyingScreen = ({ route, navigation }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fffff9',
-  },
-  addCartButton: {
-    backgroundColor: '#aa7e6f',
-    width: 200,
-    height: 32,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 32,
-    padding: 32,
-  },
-
-  textAddCartButton: {
-    color: '#fffaf7',
-    fontSize: 16
-  },
-  
-  buttonContainer: {
-    width: '100%',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-  imageConfig: {
-    width: '50%',
-    height: '50%',
-  },
-
-  textModel: {
-    fontWeight: 'bold',
-    fontSize: 36,
-    fontStyle: 'normal',
-    fontFamily: 'Roboto'
-  },
-  
-  textBold: {
-    fontWeight: 'bold',
-    fontSize: 16
-  },
-
-  textPrice: {
-    color: '#806261',
-    padding: 16,
-    fontSize: 24,
-    fontFamily: 'sans-serif'
-  }
-})
 
 export default BuyingScreen
