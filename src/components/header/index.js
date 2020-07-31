@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 import PropTypes from 'prop-types'
-import { Badger } from 'react-native-elements'
 
-import Container from './styles'
+import { Container } from './styles'
 
 const Header = (props) => {
+
   return (
     <Container {...props}>
       <MaterialIcons style={styles.icons} name="filter-list" size={32} color="black"/>

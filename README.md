@@ -10,7 +10,7 @@
    <td align="center"><img src="./.github/printSellingScreen.jpeg" height="auto" width="160">
    <h5>Sample screen</h3>
 
-   <td align="center"><img src="./.github/addToCartScreen.jpeg" height="auto" width="160">
+   <td align="center"><img src="./.github/buyingScreen.jpeg" height="auto" width="160">
    <h5>AddToCart screen</h3>
   </tr>
 </table>

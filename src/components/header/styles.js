@@ -7,4 +7,4 @@ const Container = styled.View`
   justify-content: ${({justifyContent}) => justifyContent};;
 `
 
-export default Container
+export { Container }
