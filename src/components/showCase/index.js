@@ -1,6 +1,8 @@
-import react from 'react'
+import React from 'react'
 
 const ShowCase = (props) => {
+  let { model, uri } = props
+  
   return (
     <TouchableOpacity key={model} onPress={() => navigation.navigate('BuyingScreen', {
       'model': model,

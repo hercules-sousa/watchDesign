@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import Header from '../../components/header'
 import { Feather, AntDesign } from '@expo/vector-icons';
+import { Badge } from 'react-native-elements';
 
 import styles from './styles'
 
@@ -9,7 +10,9 @@ const BuyingScreen = ({ route, navigation }) => {
   let { model, uri, price, composition } = route.params
   return (
     <View style={styles.container}>
-      <Header />
+      <Header>
+        <Badge />
+      </Header>
 
       <View style={{ flex: 1, alignItems: 'center' }}>
         <Image source={{ uri: uri }} style={styles.imageConfig} />
