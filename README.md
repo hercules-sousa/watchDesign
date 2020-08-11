@@ -22,6 +22,7 @@ This project was built using the follow technologies:
 - [React-Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
 - [Express](https://expressjs.com/)
+- [Nodejs](https://nodejs.org/en/)
 
 ---
 
