@@ -1,11 +1,11 @@
-const express = require('express')
+const express = require("express");
 
-const routes = express.Router()
+const routes = express.Router();
 
-routes.get('/pillow-images', (request, response) => {
+routes.get("/pillow-images", (request, response) => {
   return response.json({
-    "message": "Alright, everything alright",
-  })
-})
+    message: "Alright, everything alright",
+  });
+});
 
-module.exports = routes
+module.exports = routes;
