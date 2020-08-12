@@ -2,7 +2,9 @@ const express = require("express");
 
 const routes = express.Router();
 
-routes.get("/pillow-images", (request, response) => {
+routes.use("/pillow-images", express.static(__dirname + '/assets/pillowWatches'))
+
+routes.get("/", (request, response) => {
   return response.json({
     message: "Alright, everything alright",
   });

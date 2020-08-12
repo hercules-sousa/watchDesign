@@ -4,24 +4,10 @@ import { View, Text, Image } from "react-native";
 const PillowScreen = ({ route, navigation }) => {
   const { model } = route.params;
 
-  function buildPillowName() {
-    let pillowName = String();
-    model.split(" ").map((word) => {
-      pillowName += word;
-    });
-    pillowName = pillowName[0].toUpperCase() + pillowName.slice(1);
-    pillowName = "../../pillowWatches/pillow" + pillowName + ".png";
-    return pillowName;
-  }
-
-  const pillowName = buildPillowName();
-  console.log(pillowName);
-
   return (
     <View>
-      <Text></Text>
       <Text>{model}</Text>
-      <Text>{pillowName}</Text>
+      <Image source={{ uri: 'http://192.168.100.16:3333/pillow-images/pillowDatejust36.png' }} style={{ width: 80, height: 80 }} />
     </View>
   );
 };
