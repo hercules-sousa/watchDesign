@@ -10,6 +10,7 @@ import {
 import styles from "./styles";
 import Header from "../../components/header";
 import watches from "../../database";
+import API from '../../services/API'
 
 const SampleScreen = ({ navigation }) => {
   const [watchData, setWatchData] = useState([])
@@ -26,7 +27,9 @@ const SampleScreen = ({ navigation }) => {
   }
 
   useEffect(() => {
-    
+    API.get("watches").then((response) => {
+      console.log(response)
+    })
   }, [])
 
   return (
@@ -35,9 +38,6 @@ const SampleScreen = ({ navigation }) => {
 
       <ScrollView contentContainerStyle={styles.body}>
         {createArray()}
-        {
-          console.log(watchData)
-        }
         {arrWatches.map((watchArray) => {
           let model = watchArray[0];
           let data = watchArray[1];

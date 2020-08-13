@@ -1,7 +1,10 @@
 const axios = require('axios')
+import { getLocalHost } from '../utils'
+
+const localHost = getLocalHost()
 
 const API = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: `http://${localHost}:3333`,
 })
 
-module.exports = API
+export default API
