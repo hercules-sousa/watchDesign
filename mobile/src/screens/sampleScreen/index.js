@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
   ScrollView,
   Image,
   TouchableOpacity,
-  SafeAreaView,
 } from "react-native";
+
+import styles from "./styles";
 import Header from "../../components/header";
 import watches from "../../database";
-import styles from "./styles";
 
 const SampleScreen = ({ navigation }) => {
+  const [watchData, setWatchData] = useState([])
+
   let arrWatches = [];
 
   function createArray() {
@@ -23,16 +25,9 @@ const SampleScreen = ({ navigation }) => {
     });
   }
 
-  /*
-  function concatWatchName(separatedName){
-    let concated = String()
-    separatedName.split(' ').map(word => {
-      concated += word
-    })
-    console.log(concated)
-    return concated
-  }
-  */
+  useEffect(() => {
+    
+  }, [])
 
   return (
     <View style={styles.container}>
@@ -40,6 +35,9 @@ const SampleScreen = ({ navigation }) => {
 
       <ScrollView contentContainerStyle={styles.body}>
         {createArray()}
+        {
+          console.log(watchData)
+        }
         {arrWatches.map((watchArray) => {
           let model = watchArray[0];
           let data = watchArray[1];
