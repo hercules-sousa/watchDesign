@@ -9,26 +9,26 @@ import {
 
 import styles from "./styles";
 import Header from "../../components/header";
-import watches from "../../database";
 import API from '../../services/API'
 
 const SampleScreen = ({ navigation }) => {
   const [watchData, setWatchData] = useState([])
 
-  let arrWatches = [];
-
-  function createArray() {
-    Object.keys(watches).forEach((model) => {
-      let arr = [];
-      arr.push(model);
-      arr.push(watches[model]);
-      arrWatches.push(arr);
-    });
+  function createArray(givenObject) {
+    let bidimensionalArrayWatches = []
+    Object.keys(givenObject).forEach(model => {
+      let arr = []
+      arr.push(model)
+      arr.push(givenObject[model])
+      bidimensionalArrayWatches.push(arr)
+    })
+    return bidimensionalArrayWatches
   }
 
   useEffect(() => {
     API.get("watches").then((response) => {
-      console.log(response)
+      let bidimensionalArrayWatches = createArray(response.data)
+      setWatchData(bidimensionalArrayWatches)
     })
   }, [])
 
@@ -37,8 +37,7 @@ const SampleScreen = ({ navigation }) => {
       <Header />
 
       <ScrollView contentContainerStyle={styles.body}>
-        {createArray()}
-        {arrWatches.map((watchArray) => {
+        {watchData.map((watchArray) => {
           let model = watchArray[0];
           let data = watchArray[1];
           return (
