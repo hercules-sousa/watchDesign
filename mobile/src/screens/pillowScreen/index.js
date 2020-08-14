@@ -12,12 +12,17 @@ const PillowScreen = ({ route, navigation }) => {
     setLocalHost(getLocalHost());
   }, []);
 
+  function getPillowWatchName(watch) {
+    watch = watch.split(" ").join("")
+    watch = "pillow" + watch[0].toUpperCase() + watch.slice(1)
+    return watch
+  }
+
   return (
     <View>
-      <Text>{model}</Text>
       <Image
         source={{
-          uri: `http://${localHost}:3333/pillow-images/pillowDatejust36.png`,
+          uri: `http://${localHost}:3333/pillow-images/${getPillowWatchName(model)}.png`,
         }}
         style={{ width: 180, height: 180 }}
       />
