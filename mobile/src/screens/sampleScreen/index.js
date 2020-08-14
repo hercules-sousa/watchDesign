@@ -26,9 +26,13 @@ const SampleScreen = ({ navigation }) => {
   }
 
   useEffect(() => {
-    API.get("watches").then((response) => {
+    API.get("watches")
+    .then((response) => {
       let bidimensionalArrayWatches = createArray(response.data)
       setWatchData(bidimensionalArrayWatches)
+    })
+    .catch((err) => {
+      console.log(err)
     })
   }, [])
 
