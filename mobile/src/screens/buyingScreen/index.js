@@ -24,6 +24,7 @@ const BuyingScreen = ({ route, navigation }) => {
         <Text style={styles.textBold}>Compostion:</Text>
         <Text>{composition}</Text>
       </View>
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.icons}
