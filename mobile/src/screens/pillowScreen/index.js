@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image } from "react-native";
-import Constants from "expo-constants";
-const { manifest } = Constants;
+
+import { getLocalHost } from '../../utils'
 
 const PillowScreen = ({ route, navigation }) => {
   const { model } = route.params;
@@ -9,7 +9,7 @@ const PillowScreen = ({ route, navigation }) => {
   const [localHost, setLocalHost] = useState("");
 
   useEffect(() => {
-    setLocalHost(manifest.hostUri.split(":")[0]);
+    setLocalHost(getLocalHost());
   }, []);
 
   return (
@@ -19,7 +19,7 @@ const PillowScreen = ({ route, navigation }) => {
         source={{
           uri: `http://${localHost}:3333/pillow-images/pillowDatejust36.png`,
         }}
-        style={{ width: 80, height: 80 }}
+        style={{ width: 180, height: 180 }}
       />
     </View>
   );
