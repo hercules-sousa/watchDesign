@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 80,
+    bottom: 12,
   },
 
   watchImage: {
