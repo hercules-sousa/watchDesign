@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   pillowImage: {
-    width: 300,
-    height: 300,
+    width: 240,
+    height: 240,
   },
   body: {
     flex: 1,
