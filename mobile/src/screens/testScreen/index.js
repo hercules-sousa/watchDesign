@@ -1,10 +1,12 @@
 import React from "react";
 import { Text, View } from "react-native";
 
+import BottomButtons from "../../components/bottomButtons";
+
 const Test = () => {
   return (
     <View>
-      <Text>asdfasfasf</Text>
+      <BottomButtons />
     </View>
   );
 };

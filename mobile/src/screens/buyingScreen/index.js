@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, Image } from "react-native";
 import Header from "../../components/header";
-import { Feather, AntDesign } from "@expo/vector-icons";
 
 import styles from "./styles";
+import BottomButtons from "../../components/bottomButtons";
 
 const BuyingScreen = ({ route, navigation }) => {
   let { model, uri, price, composition } = route.params;
@@ -24,43 +24,8 @@ const BuyingScreen = ({ route, navigation }) => {
         <Text style={styles.textBold}>Compostion:</Text>
         <Text>{composition}</Text>
       </View>
-      
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.icons}
-          onPress={() => navigation.goBack()}
-        >
-          <AntDesign name="arrowleft" size={24} color="white" />
-        </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("PillowScreen", {
-              model,
-            })
-          }
-          style={styles.addCartButton}
-        >
-          <Text style={styles.textAddCartButton}>Add to cart</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.icons}>
-          <Feather name="save" size={24} color="white" />
-        </TouchableOpacity>
-      </View>
-
-      <View style={{ alignItems: "center", padding: 16 }}>
-        <TouchableOpacity
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-            width: "90%",
-            height: 56,
-          }}
-        >
-          <Text style={{ color: "#a9a9a9", fontSize: 16 }}>About</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButtons model={model} destinationScreenName="PillowScreen" />
     </View>
   );
 };

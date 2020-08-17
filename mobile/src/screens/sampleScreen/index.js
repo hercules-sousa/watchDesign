@@ -1,40 +1,34 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
 import Header from "../../components/header";
-import API from '../../services/API'
+import API from "../../services/API";
 
 const SampleScreen = ({ navigation }) => {
-  const [watchData, setWatchData] = useState([])
+  const [watchData, setWatchData] = useState([]);
 
   function createArray(givenObject) {
-    let bidimensionalArrayWatches = []
-    Object.keys(givenObject).forEach(model => {
-      let arr = []
-      arr.push(model)
-      arr.push(givenObject[model])
-      bidimensionalArrayWatches.push(arr)
-    })
-    return bidimensionalArrayWatches
+    let bidimensionalArrayWatches = [];
+    Object.keys(givenObject).forEach((model) => {
+      let arr = [];
+      arr.push(model);
+      arr.push(givenObject[model]);
+      bidimensionalArrayWatches.push(arr);
+    });
+    return bidimensionalArrayWatches;
   }
 
   useEffect(() => {
     API.get("watches")
-    .then((response) => {
-      let bidimensionalArrayWatches = createArray(response.data)
-      setWatchData(bidimensionalArrayWatches)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }, [])
+      .then((response) => {
+        let bidimensionalArrayWatches = createArray(response.data);
+        setWatchData(bidimensionalArrayWatches);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <View style={styles.container}>

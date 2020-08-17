@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-import { getLocalHost } from '../../utils'
-import Header from '../../components/header'
+import { getLocalHost } from "../../utils";
+import Header from "../../components/header";
+import BottomButtons from "../../components/bottomButtons";
 
-const PillowScreen = ({ route, navigation }) => {
+const PillowScreen = ({ route }) => {
   const { model } = route.params;
 
   const [localHost, setLocalHost] = useState("");
@@ -14,8 +15,8 @@ const PillowScreen = ({ route, navigation }) => {
   }, []);
 
   function getPillowWatchName(watch) {
-    watch = watch.split(" ").join("")
-    return watch
+    watch = watch.split(" ").join("");
+    return watch;
   }
 
   return (
@@ -25,11 +26,15 @@ const PillowScreen = ({ route, navigation }) => {
       <View style={styles.body}>
         <Image
           source={{
-            uri: `http://${localHost}:3333/pillow-images/${getPillowWatchName(model)}.png`,
+            uri: `http://${localHost}:3333/pillow-images/${getPillowWatchName(
+              model
+            )}.png`,
           }}
           style={styles.pillowImage}
         />
       </View>
+
+      <BottomButtons />
     </View>
   );
 };
@@ -39,13 +44,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   pillowImage: {
-    width: 240,
-    height: 240,
+    width: 260,
+    height: 260,
   },
   body: {
     flex: 1,
     alignItems: "center",
-  }
-})
+  },
+});
 
 export default PillowScreen;

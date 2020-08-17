@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   imageConfig: {
-    width: "50%",
-    height: "50%",
+    width: 260,
+    height: 260,
   },
 
   textModel: {
