@@ -34,7 +34,7 @@ const PillowScreen = ({ route }) => {
         />
       </View>
 
-      <BottomButtons />
+      <BottomButtons buttonText="Finish buying" />
     </View>
   );
 };

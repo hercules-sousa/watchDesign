@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
-const BottomButtons = ({ destinationScreenName, model }) => {
+const BottomButtons = ({ destinationScreenName, model, buttonText }) => {
   const navigation = useNavigation();
 
   return (
@@ -26,7 +26,7 @@ const BottomButtons = ({ destinationScreenName, model }) => {
           }
           style={styles.addCartButton}
         >
-          <Text style={styles.textAddCartButton}>Add to cart</Text>
+          <Text style={styles.textAddCartButton}>{buttonText}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.icons}>
