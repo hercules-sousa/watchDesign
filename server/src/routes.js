@@ -10,6 +10,37 @@ routes.use(
   express.static(path.resolve(__dirname, "assets", "pillowWatches"))
 );
 
+routes.post("/pillow-images", async (req, res) => {
+  try {
+    if (!req.files) {
+      res.status(500).send({
+        message: "No files to upload",
+      });
+    } else {
+      const pillowImage = req.files.pillowImage;
+
+      console.log(pillowImage);
+      console.log("\n\n\n");
+
+      pillowImage.mv(
+        path.resolve(__dirname, "assets", "pillowWatches", pillowImage.name)
+      );
+
+      res.send({
+        status: 200,
+        message: "File uploaded",
+        data: {
+          name: pillowImage.name,
+          mimetype: pillowImage.mimetype,
+          size: pillowImage.size,
+        },
+      });
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 routes.get("/watches", (request, response) => {
   return response.send(watches);
 });
