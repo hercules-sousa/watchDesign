@@ -7,7 +7,7 @@ const routes = express.Router();
 
 routes.use(
   "/pillow-images",
-  express.static(path.resolve(__dirname, "assets", "pillowWatches"))
+  express.static(path.resolve(__dirname, "assets", "pillowWatches", "gray"))
 );
 
 routes.post("/pillow-images", async (req, res) => {
@@ -18,9 +18,6 @@ routes.post("/pillow-images", async (req, res) => {
       });
     } else {
       const pillowImage = req.files.pillowImage;
-
-      console.log(pillowImage);
-      console.log("\n\n\n");
 
       pillowImage.mv(
         path.resolve(__dirname, "assets", "pillowWatches", pillowImage.name)
@@ -37,7 +34,9 @@ routes.post("/pillow-images", async (req, res) => {
       });
     }
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({
+      message: "Not possible to upload files"
+    });
   }
 });
 
