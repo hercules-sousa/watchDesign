@@ -6,7 +6,7 @@ const watches = require(path.resolve(__dirname, "database", "data.json"));
 const routes = express.Router();
 
 routes.use(
-  "/pillow-images",
+  "/pillow-images/gray/",
   express.static(path.resolve(__dirname, "assets", "pillowWatches", "gray"))
 );
 

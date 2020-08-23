@@ -9,6 +9,7 @@ const PillowScreen = ({ route }) => {
   const { model } = route.params;
 
   const [localHost, setLocalHost] = useState("");
+  const [pillowColor, setPillowColor] = useState("gray");
 
   useEffect(() => {
     setLocalHost(getLocalHost());
@@ -19,6 +20,8 @@ const PillowScreen = ({ route }) => {
     return watch;
   }
 
+  
+
   return (
     <View style={styles.container}>
       <Header />
@@ -26,7 +29,7 @@ const PillowScreen = ({ route }) => {
       <View style={styles.body}>
         <Image
           source={{
-            uri: `http://${localHost}:3333/pillow-images/${getPillowWatchName(
+            uri: `http://${localHost}:3333/pillow-images/${pillowColor}/${getPillowWatchName(
               model
             )}.png`,
           }}
