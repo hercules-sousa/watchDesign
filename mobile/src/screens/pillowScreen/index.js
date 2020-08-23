@@ -24,6 +24,7 @@ const PillowScreen = ({ route }) => {
   }
 
   function handleChangeOfPillowColor(color) {
+    setPillowColor(color)
     if (color === "gray") {
       setBgGray(true)
       setBgBlack(false)

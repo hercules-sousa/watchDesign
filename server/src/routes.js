@@ -10,6 +10,11 @@ routes.use(
   express.static(path.resolve(__dirname, "assets", "pillowWatches", "gray"))
 );
 
+routes.use(
+  "/pillow-images/black/",
+  express.static(path.resolve(__dirname, "assets", "pillowWatches", "black"))
+);
+
 routes.post("/pillow-images", async (req, res) => {
   try {
     if (!req.files) {
