@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, Button } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Button,
+} from "react-native";
 
 import { getLocalHost } from "../../utils";
 import Header from "../../components/header";
@@ -24,21 +31,21 @@ const PillowScreen = ({ route }) => {
   }
 
   function handleChangeOfPillowColor(color) {
-    setPillowColor(color)
+    setPillowColor(color);
     if (color === "gray") {
-      setBgGray(true)
-      setBgBlack(false)
-      setBgBlue(false)
+      setBgGray(true);
+      setBgBlack(false);
+      setBgBlue(false);
     }
     if (color === "black") {
-      setBgGray(false)
-      setBgBlack(true)
-      setBgBlue(false)
+      setBgGray(false);
+      setBgBlack(true);
+      setBgBlue(false);
     }
     if (color === "blue") {
-      setBgGray(false)
-      setBgBlack(false)
-      setBgBlue(true)
+      setBgGray(false);
+      setBgBlack(false);
+      setBgBlue(true);
     }
   }
 
@@ -61,51 +68,75 @@ const PillowScreen = ({ route }) => {
         </View>
 
         <View style={{ flexDirection: "row" }}>
-
-          <TouchableOpacity 
-            style={{ 
-              backgroundColor: bgBlack ? "black" : "#f5f5f5", 
-              padding: 8, 
-              borderRadius: 32, 
+          <TouchableOpacity
+            style={{
+              backgroundColor: bgBlack ? "black" : "#f5f5f5",
+              padding: 8,
+              borderRadius: 32,
               borderWidth: 1,
               borderColor: "black",
               marginHorizontal: 8,
             }}
-            onPress={() => {handleChangeOfPillowColor("black")}}
+            onPress={() => {
+              handleChangeOfPillowColor("black");
+            }}
           >
-            <View style={{ backgroundColor: "black", width: 40, height: 40, borderRadius:32 }} />
+            <View
+              style={{
+                backgroundColor: "black",
+                width: 40,
+                height: 40,
+                borderRadius: 32,
+              }}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={{ 
-              backgroundColor: bgGray ? "gray" : "#f5f5f5", 
-              padding: 8, 
-              borderRadius: 32, 
+            style={{
+              backgroundColor: bgGray ? "gray" : "#f5f5f5",
+              padding: 8,
+              borderRadius: 32,
               borderWidth: 1,
               borderColor: "black",
               marginHorizontal: 8,
             }}
-            onPress={() => {handleChangeOfPillowColor("gray")}}
-          >
-            <View style={{ backgroundColor: "gray", width: 40, height: 40, borderRadius:32 }} />
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={{ 
-              backgroundColor: bgBlue ? "blue" : "#f5f5f5", 
-              padding: 8, 
-              borderRadius: 32, 
-              borderWidth: 1,
-              borderColor: "black",
-              marginHorizontal: 8,
+            onPress={() => {
+              handleChangeOfPillowColor("gray");
             }}
-            onPress={() => {handleChangeOfPillowColor("blue")}}
           >
-            <View style={{ backgroundColor: "blue", width: 40, height: 40, borderRadius:32 }} />
+            <View
+              style={{
+                backgroundColor: "gray",
+                width: 40,
+                height: 40,
+                borderRadius: 32,
+              }}
+            />
           </TouchableOpacity>
 
+          <TouchableOpacity
+            style={{
+              backgroundColor: bgBlue ? "blue" : "#f5f5f5",
+              padding: 8,
+              borderRadius: 32,
+              borderWidth: 1,
+              borderColor: "black",
+              marginHorizontal: 8,
+            }}
+            onPress={() => {
+              handleChangeOfPillowColor("blue");
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: "blue",
+                width: 40,
+                height: 40,
+                borderRadius: 32,
+              }}
+            />
+          </TouchableOpacity>
         </View>
-
       </View>
 
       <BottomButtons buttonText="Finish buying" />

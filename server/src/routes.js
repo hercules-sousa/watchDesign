@@ -15,6 +15,11 @@ routes.use(
   express.static(path.resolve(__dirname, "assets", "pillowWatches", "black"))
 );
 
+routes.use(
+  "/pillow-images/blue/",
+  express.static(path.resolve(__dirname, "assets", "pillowWatches", "blue"))
+);
+
 routes.post("/pillow-images", async (req, res) => {
   try {
     if (!req.files) {
@@ -40,7 +45,7 @@ routes.post("/pillow-images", async (req, res) => {
     }
   } catch (err) {
     res.status(500).send({
-      message: "Not possible to upload files"
+      message: "Not possible to upload files",
     });
   }
 });

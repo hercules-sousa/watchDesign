@@ -25,10 +25,10 @@ const BuyingScreen = ({ route, navigation }) => {
         <Text>{composition}</Text>
       </View>
 
-      <BottomButtons 
-        model={model} 
-        destinationScreenName="PillowScreen" 
-        buttonText="Add to cart" 
+      <BottomButtons
+        model={model}
+        destinationScreenName="PillowScreen"
+        buttonText="Add to cart"
       />
     </View>
   );
