@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Button,
+  TouchableWithoutFeedback
 } from "react-native";
 
 import { getLocalHost } from "../../utils";
@@ -137,6 +138,11 @@ const PillowScreen = ({ route }) => {
             />
           </TouchableOpacity>
         </View>
+
+        <TouchableWithoutFeedback style={{ backgroundColor: "black", marginTop: 8 }}>
+          <Text>asdfasdf</Text>
+        </TouchableWithoutFeedback>
+
       </View>
 
       <BottomButtons buttonText="Finish buying" />
