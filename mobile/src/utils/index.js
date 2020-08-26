@@ -1,7 +1,5 @@
-import Constants from "expo-constants";
-const { manifest } = Constants;
-
 export function getLocalHost() {
-  const localHost = manifest.hostUri.split(":")[0];
+  const localHost = process.env.developingReactPort
+  console.log(`Porta local ${localHost}`)
   return localHost;
 }
