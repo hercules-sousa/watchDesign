@@ -1,10 +1,6 @@
-import env from "../../environment"
+import env from "../../environment";
 
 export function getBackendAddress() {
-  let { REACTPORT } = env
+  let { REACTPORT } = env;
   return REACTPORT;
-}
-
-export function getLocalHost() {
-  return getBackendAddress()
 }

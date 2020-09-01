@@ -1,5 +1,5 @@
 env = {
-  "REACTPORT": "YOUR PORT",
-}
+  REACTPORT: "YOUR PORT",
+};
 
-export default env
+export default env;

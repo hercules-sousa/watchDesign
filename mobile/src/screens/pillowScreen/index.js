@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Button,
-  TouchableWithoutFeedback
-} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 import { getBackendAddress } from "../../utils";
 import Header from "../../components/header";
@@ -64,8 +56,20 @@ const PillowScreen = ({ route }) => {
           style={styles.pillowImage}
         />
 
-        <View style={{ marginVertical: 24 }}>
-          <Text>Choose the color of the pillow:</Text>
+        <View style={{ marginVertical: 16, alignItems: "center" }}>
+          <Text
+            style={{
+              fontFamily: "sans-serif-condensed",
+              fontWeight: "bold",
+              color: "black",
+              fontSize: 32,
+            }}
+          >
+            Pillow Color
+          </Text>
+          <Text style={{ fontFamily: "notoserif" }}>
+            Choose the color of the pillow:
+          </Text>
         </View>
 
         <View style={{ flexDirection: "row" }}>
@@ -138,11 +142,6 @@ const PillowScreen = ({ route }) => {
             />
           </TouchableOpacity>
         </View>
-
-        <TouchableWithoutFeedback style={{ backgroundColor: "black", marginTop: 8 }}>
-          <Text>asdfasdf</Text>
-        </TouchableWithoutFeedback>
-
       </View>
 
       <BottomButtons buttonText="Finish buying" />
