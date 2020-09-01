@@ -1,5 +1,6 @@
-export function getLocalHost() {
-  const localHost = process.env.developingReactPort
-  console.log(`Porta local ${localHost}`)
-  return localHost;
+import env from "../../environment"
+
+export function getBackendAddress() {
+  let { REACTPORT } = env
+  return REACTPORT;
 }
