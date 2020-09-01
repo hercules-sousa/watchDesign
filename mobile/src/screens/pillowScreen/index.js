@@ -144,7 +144,7 @@ const PillowScreen = ({ route }) => {
         </View>
       </View>
 
-      <BottomButtons buttonText="Finish buying" />
+      <BottomButtons buttonText="Finish buying" destinationScreenName="CongratulationScreen" />
     </View>
   );
 };
