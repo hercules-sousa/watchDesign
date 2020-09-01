@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback
 } from "react-native";
 
-import { getLocalHost } from "../../utils";
+import { getBackendAddress } from "../../utils";
 import Header from "../../components/header";
 import BottomButtons from "../../components/bottomButtons";
 
@@ -23,7 +23,7 @@ const PillowScreen = ({ route }) => {
   const [bgBlue, setBgBlue] = useState(false);
 
   useEffect(() => {
-    setLocalHost(getLocalHost());
+    setLocalHost(getBackendAddress());
   }, []);
 
   function getPillowWatchName(watch) {
