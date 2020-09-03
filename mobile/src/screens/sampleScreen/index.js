@@ -27,6 +27,7 @@ const SampleScreen = ({ navigation }) => {
       })
       .catch((err) => {
         console.log(err);
+        navigation.navigate("NotFoundScreen")
       });
   }, []);
 

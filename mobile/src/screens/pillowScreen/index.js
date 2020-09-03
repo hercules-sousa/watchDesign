@@ -54,6 +54,7 @@ const PillowScreen = ({ route }) => {
             )}.png`,
           }}
           style={styles.pillowImage}
+          // onLoad
         />
 
         <View style={{ marginVertical: 16, alignItems: "center" }}>

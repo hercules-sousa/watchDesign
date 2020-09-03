@@ -51,7 +51,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  paddingTop: 40,
+  paddingTop: 18,
   paddingHorizontal: 24,
   flexDirection: "row",
   justifyContent: "space-between",
