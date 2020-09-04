@@ -4,9 +4,11 @@ import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import Header from "../../components/header";
 import API from "../../services/API";
+import { getBackendAddress } from "../../utils";
 
-const SampleScreen = ({ navigation }) => {
+const SampleScreen = ({ navigation, route }) => {
   const [watchData, setWatchData] = useState([]);
+  const { restart } = route.params
 
   function createArray(givenObject) {
     let bidimensionalArrayWatches = [];
@@ -19,17 +21,34 @@ const SampleScreen = ({ navigation }) => {
     return bidimensionalArrayWatches;
   }
 
-  useEffect(() => {
+  function setWatches() {
     API.get("watches")
       .then((response) => {
         let bidimensionalArrayWatches = createArray(response.data);
         setWatchData(bidimensionalArrayWatches);
       })
       .catch((err) => {
-        console.log(err);
-        navigation.navigate("NotFoundScreen")
+
+        fetch(`http://${getBackendAddress}:3333/watches`)
+        .then(function(answer) {
+          let bidimensionalArrayWatches = createArray(answer);
+          setWatchData(bidimensionalArrayWatches);
+        })
+        .catch((err) => {
+          console.log(err)
+          navigation.navigate("NotFoundScreen");
+        })
+        
       });
+  }
+
+  useEffect(() => {
+    setWatches()
   }, []);
+
+  if(restart) {
+    setWatches()
+  }
 
   return (
     <View style={styles.container}>

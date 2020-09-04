@@ -5,7 +5,7 @@ import Header from "../../components/header";
 import styles from "./styles";
 import BottomButtons from "../../components/bottomButtons";
 
-const BuyingScreen = ({ route, navigation }) => {
+const BuyingScreen = ({ route }) => {
   let { model, uri, price, composition } = route.params;
 
   return (
