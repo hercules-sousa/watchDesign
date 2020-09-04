@@ -8,7 +8,7 @@ import { getBackendAddress } from "../../utils";
 
 const SampleScreen = ({ navigation, route }) => {
   const [watchData, setWatchData] = useState([]);
-  const { restart } = route.params
+  const { restart } = route.params;
 
   function createArray(givenObject) {
     let bidimensionalArrayWatches = [];
@@ -28,26 +28,27 @@ const SampleScreen = ({ navigation, route }) => {
         setWatchData(bidimensionalArrayWatches);
       })
       .catch((err) => {
-
         fetch(`http://${getBackendAddress}:3333/watches`)
-        .then(function(answer) {
-          let bidimensionalArrayWatches = createArray(answer);
-          setWatchData(bidimensionalArrayWatches);
-        })
-        .catch((err) => {
-          console.log(err)
-          navigation.navigate("NotFoundScreen");
-        })
-        
+          .then(function (answer) {
+            let bidimensionalArrayWatches = createArray(answer);
+            setWatchData(bidimensionalArrayWatches);
+          })
+          .catch((err) => {
+            console.log(err);
+
+            setTimeout(() => {
+              navigation.navigate("NotFoundScreen");
+            }, 3000);
+          });
       });
   }
 
   useEffect(() => {
-    setWatches()
+    setWatches();
   }, []);
 
-  if(restart) {
-    setWatches()
+  if (restart) {
+    setWatches();
   }
 
   return (

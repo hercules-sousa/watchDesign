@@ -16,7 +16,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="SampleScreen">
-        <Stack.Screen name="SampleScreen" component={SampleScreen} initialParams={{ restart: false }} />
+        <Stack.Screen
+          name="SampleScreen"
+          component={SampleScreen}
+          initialParams={{ restart: false }}
+        />
         <Stack.Screen name="BuyingScreen" component={BuyingScreen} />
         <Stack.Screen name="PillowScreen" component={PillowScreen} />
         <Stack.Screen
