@@ -36,11 +36,13 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontStyle: "normal",
     fontFamily: "Roboto",
+    color: "black",
   },
 
   textBold: {
     fontWeight: "bold",
     fontSize: 16,
+    color: "black",
   },
 
   textPrice: {

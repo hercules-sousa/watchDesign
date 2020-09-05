@@ -20,6 +20,7 @@ const PillowScreen = ({ route }) => {
 
   function getPillowWatchName(watch) {
     watch = watch.split(" ").join("");
+    console.log(watch);
     return watch;
   }
 

@@ -24,12 +24,14 @@ const SampleScreen = ({ navigation, route }) => {
   function setWatches() {
     API.get("watches")
       .then((response) => {
+        console.log("Got watch informations with API");
         let bidimensionalArrayWatches = createArray(response.data);
         setWatchData(bidimensionalArrayWatches);
       })
       .catch((err) => {
         fetch(`http://${getBackendAddress}:3333/watches`)
           .then(function (answer) {
+            console.log("Got watch information with fetch");
             let bidimensionalArrayWatches = createArray(answer);
             setWatchData(bidimensionalArrayWatches);
           })
