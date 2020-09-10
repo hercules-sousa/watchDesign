@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen
           name="SampleScreen"
           component={SampleScreen}
-          initialParams={{ restart: false }}
+          initialParams={{ information: false }}
         />
         <Stack.Screen name="BuyingScreen" component={BuyingScreen} />
         <Stack.Screen name="PillowScreen" component={PillowScreen} />

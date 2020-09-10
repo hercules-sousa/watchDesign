@@ -4,6 +4,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { getBackendAddress } from "../../utils";
 import Header from "../../components/header";
 import BottomButtons from "../../components/bottomButtons";
+import { isThereConnectionWithAPI } from "../../utils";
 
 const PillowScreen = ({ route }) => {
   const { model } = route.params;
@@ -17,6 +18,10 @@ const PillowScreen = ({ route }) => {
   useEffect(() => {
     setLocalHost(getBackendAddress());
   }, []);
+
+  if (!isThereConnectionWithAPI()) {
+    navigation.navigate("NotFoundScreen");
+  }
 
   function getPillowWatchName(watch) {
     watch = watch.split(" ").join("");

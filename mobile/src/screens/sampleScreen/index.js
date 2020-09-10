@@ -8,7 +8,17 @@ import { getBackendAddress } from "../../utils";
 
 const SampleScreen = ({ navigation, route }) => {
   const [watchData, setWatchData] = useState([]);
-  const { restart } = route.params;
+  let { restart } = route.params;
+
+  if (!restart) {
+    console.log("A variável information está falsa\n\n\n");
+  }
+
+  if (restart) {
+    console.log("A variável information está verdadeira\n\n\n");
+    setWatches();
+    restart = false;
+  }
 
   function createArray(givenObject) {
     let bidimensionalArrayWatches = [];
@@ -46,12 +56,9 @@ const SampleScreen = ({ navigation, route }) => {
   }
 
   useEffect(() => {
+    console.log("Getting information from UseEffect");
     setWatches();
   }, []);
-
-  if (restart) {
-    setWatches();
-  }
 
   return (
     <View style={styles.container}>
