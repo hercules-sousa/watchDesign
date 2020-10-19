@@ -8,10 +8,13 @@
 <table style="width:100%">
   <tr>
    <td align="center"><img src="./.github/sampleScreen.jpeg" height="auto" width="160">
-   <h5>Sample screen</h3>
+   <h5>Sample Screen</h3>
 
    <td align="center"><img src="./.github/buyingScreen.jpeg" height="auto" width="160">
-   <h5>Buying screen</h3>
+   <h5>Buying Screen</h3>
+
+   <td align="center"><img src="./.github/notFoundAnimation.jpeg" height="auto" width="160">
+   <h5>Not Found Animation Screen</h3>
   </tr>
 </table>
 
@@ -58,7 +61,7 @@ You should fork this repository to your machine. Then, inside of the project's f
 # Go to mobile folder
 $ cd watchDesign/mobile
 
-# Install Dependencies
+# Install Dependencies'
 $ yarn install
 
 # Run Aplication

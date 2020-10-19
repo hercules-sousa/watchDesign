@@ -4,14 +4,9 @@ import { View, Text, Image } from "react-native";
 import styles from "./styles";
 import Header from "../../components/header";
 import BottomButtons from "../../components/bottomButtons";
-import { isThereConnectionWithAPI } from "../../utils";
 
 const BuyingScreen = ({ navigation, route }) => {
   let { model, uri, price, composition } = route.params;
-
-  isThereConnectionWithAPI().catch((err) => {
-    navigation.navigate("NotFoundScreen");
-  });
 
   return (
     <View style={styles.container}>

@@ -5,20 +5,11 @@ import styles from "./styles";
 import Header from "../../components/header";
 import API from "../../services/API";
 import { getBackendAddress } from "../../utils";
+import { apisAreAvailable } from "expo";
 
-const SampleScreen = ({ navigation, route }) => {
+const SampleScreen = ({ navigation }) => {
   const [watchData, setWatchData] = useState([]);
-  let { restart } = route.params;
-
-  if (!restart) {
-    console.log("A variável information está falsa\n\n\n");
-  }
-
-  if (restart) {
-    console.log("A variável information está verdadeira\n\n\n");
-    setWatches();
-    restart = false;
-  }
+  const [toRestart, setToRestart] = useState(true)
 
   function createArray(givenObject) {
     let bidimensionalArrayWatches = [];
@@ -56,9 +47,8 @@ const SampleScreen = ({ navigation, route }) => {
   }
 
   useEffect(() => {
-    console.log("Getting information from UseEffect");
     setWatches();
-  }, []);
+  }, [toRestart]);
 
   return (
     <View style={styles.container}>
